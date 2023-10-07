@@ -28,6 +28,8 @@ console.log(`removedItem = ${removedItem}`)
 
 // 5. A delivery of 25 more parts arrived. Add the value 25 to the end of the array
 console.log("5. Add the value 25 into supplyChanges.")
+supplyChanges.push(25)
+console.log(`supplyChanges = ${supplyChanges}`)
 
 // 6. Create three new variables named 'positives', 'negatives', and
 //    'zeroes' whose values are empty arrays. Then, write a for loop
@@ -39,6 +41,33 @@ console.log("5. Add the value 25 into supplyChanges.")
 console.log(
   "6. Looping through supplyChanges to populate arrays with positive, negative, and zero values:"
 )
+// I'd normally just do this with .filter
+const [positives, negatives, zeroes] = [[], [], []]
+for (let index = 0; index < supplyChanges.length; index++) {
+  const element = supplyChanges[index]
+  // found this while playing around in the node REPL
+  // It returns 0 for 0, 1 for positive numbers, and -1 for negative numbers
+  // I used it so a switch would be practical here
+  const sign = Math.sign(element)
+  console.log(`Sign of element ${index} (${element}): ${sign}`)
+  switch (sign) {
+    case -1:
+      negatives.push(element)
+      break
+    case 0:
+      zeroes.push(element)
+      break
+    case 1:
+      positives.push(element)
+      break
+    default:
+      console.error("How did you even get here?")
+      break
+  }
+}
+console.log(`Negatives: ${negatives}
+Positives: ${positives}
+Zeroes: ${zeroes}`)
 
 // ***** STRETCH GOALS *********************************************
 // 7. Rewrite the 'for' loop from #6 as a 'for...of' loop. Instead of 'positives',
