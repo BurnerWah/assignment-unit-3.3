@@ -76,11 +76,13 @@ Zeroes: ${zeroes}`)
 console.log(
   "7. Looping through supplyChanges to populate more arrays with positive, negative, and zero values:"
 )
+// i don't wanna right now
 
 // 8. Create a variable called 'totalParts' and assign it a value of 0.
 //    Then, write a loop that adds each value of the 'supplyChanges'
 //    array to the 'totalParts' variable.
 console.log("8. Looping through supplyChanges to calculate the sum:")
+// i'd just do this with .reduce
 
 // 9. We have a large stash of parts in our warehouse that we
 //    need to box up and get ready for shipment. There are 572
