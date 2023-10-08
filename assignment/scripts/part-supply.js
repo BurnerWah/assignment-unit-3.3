@@ -76,7 +76,27 @@ Zeroes: ${zeroes}`)
 console.log(
   "7. Looping through supplyChanges to populate more arrays with positive, negative, and zero values:"
 )
-// i don't wanna right now
+const [stretchPositives, stretchNegatives, stretchZeroes] = [[], [], []]
+for (const element of supplyChanges) {
+  const sign = Math.sign(element)
+  switch (sign) {
+    case -1:
+      stretchNegatives.push(element)
+      break
+    case 0:
+      stretchZeroes.push(element)
+      break
+    case 1:
+      stretchPositives.push(element)
+      break
+    default:
+      console.error("How did you even get here?")
+      break
+  }
+}
+console.log(`Negatives: ${stretchNegatives}
+Positives: ${stretchPositives}
+Zeroes: ${stretchZeroes}`)
 
 // 8. Create a variable called 'totalParts' and assign it a value of 0.
 //    Then, write a loop that adds each value of the 'supplyChanges'
