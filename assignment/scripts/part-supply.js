@@ -103,6 +103,13 @@ Zeroes: ${stretchZeroes}`)
 //    array to the 'totalParts' variable.
 console.log("8. Looping through supplyChanges to calculate the sum:")
 // i'd just do this with .reduce
+let totalParts = 0
+for (const element of supplyChanges) {
+  totalParts += element
+}
+console.log(`Total Parts: ${totalParts}`)
+const totalPartsFunctional = supplyChanges.reduce((a, b) => a + b)
+console.log(`Total Parts via .reduce: ${totalPartsFunctional}`)
 
 // 9. We have a large stash of parts in our warehouse that we
 //    need to box up and get ready for shipment. There are 572
