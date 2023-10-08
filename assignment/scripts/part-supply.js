@@ -123,6 +123,15 @@ console.log(`Total Parts via .reduce: ${totalPartsFunctional}`)
 //    "left over," and the value of 'boxesFilled' should reflect
 //    how many boxes were filled.
 console.log('9. Filling boxes with a "while" loop')
+let parts = 572
+let boxesFilled = 0
+const BOX_SIZE = 7
+while (parts >= BOX_SIZE) {
+  boxesFilled++
+  parts -= BOX_SIZE
+}
+console.log(`Parts left over: ${parts}
+Boxes Filled: ${boxesFilled}`)
 
 // DO NOT MODIFY
 // Used for automated testing
